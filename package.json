@@ -1,0 +1,40 @@
+{
+  "homepage": "https://rhizene.github.io/status",
+  "name": "status",
+  "version": "1.0.0",
+  "description": "A personal landing page",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run crossenv && webpack serve --mode development --config webpack.config.js",
+    "build": "npm run crossenv && webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "crossenv": "cross-env AUTOPREFIXER_GRID=autoplace"
+  },
+  "author": "rhizene",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "cross-env": "^7.0.3",
+    "gh-pages": "^4.0.0",
+    "postcss-loader": "^7.0.2",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 5 chrome version",
+      "last 5 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

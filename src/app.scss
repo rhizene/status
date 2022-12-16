@@ -1,0 +1,14 @@
+@use 'sass/elements';
+@use 'sass/common.scss';
+@use 'sass/desktop.scss';
+@use 'sass/mobile.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+    font-family: SmudgieCrayon;
+    src: url('./assets/SmudgieCrayon-rY0O.ttf');
+}
+
+@font-face {
+    font-family: SimpleChalk;
+    src: url('./assets/Very Simple Chalk.ttf');
+}
