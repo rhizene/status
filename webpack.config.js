@@ -11,7 +11,8 @@ module.exports = {
     output: {
         path: OUTPUT_FOLDER,
         filename: 'bundle.js',
-        assetModuleFilename: 'assets/[name][ext]'
+        assetModuleFilename: 'assets/[name][ext]',
+        publicPath: "/status/",
     },
 
     devtool: 'eval-source-map',
@@ -24,7 +25,7 @@ module.exports = {
             directory: OUTPUT_FOLDER
         },  
         port: 3000,
-        // compress: true,
+         compress: true,
         open: true,
         client: {
             overlay: true,

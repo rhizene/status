@@ -3,7 +3,7 @@
   "name": "status",
   "version": "1.0.0",
   "description": "A personal landing page",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "npm run crossenv && webpack serve --mode development --config webpack.config.js",
     "build": "npm run crossenv && webpack --mode production",
