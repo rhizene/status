@@ -5,8 +5,8 @@
   "description": "A personal landing page",
   "private": true,
   "scripts": {
-    "start": "npm run crossenv && webpack serve --mode development --config webpack.config.js",
-    "build": "npm run crossenv && webpack --mode production",
+    "start": "npm run crossenv && webpack serve --config webpack.config.js",
+    "build": "npm run crossenv && webpack --config webpack.config.prod.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
