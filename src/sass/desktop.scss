@@ -10,9 +10,10 @@
             }
 
             dialog {
+                width: 10vw;
                 &.open {
                     &.show-modal {
-                        margin-left: 90vw;
+                        margin-left: 85vw;
                     }
                 }
             }

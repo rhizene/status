@@ -80,9 +80,14 @@ dialog {
     margin-top:80vh;
     margin-left: 100vw;
     bottom: $dialogBottom;
-    width: 10vw;
     transition: margin-left 8s, opacity 5s;
     opacity: 0;
+    > div {
+        display: flex;
+        padding-top: 0.5rem;
+        width: 100%;
+        justify-content: space-around;
+    }
     &::backdrop {
         transition: background-color 2s;
         background: rgba(colors.$color-background, 0);
@@ -108,6 +113,7 @@ dialog {
     background-color:  rgba(100,100,100, 0.5);
     border: 2px solid orange;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     &:hover {
         background-color:  rgba(255,255,255, 1);
     }

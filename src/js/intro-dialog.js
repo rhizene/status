@@ -1,7 +1,7 @@
 import { audioElement } from "./media-button";
 
 
-const hrElement = document.createElement('hr');
+const buttonContainer = document.createElement('div');
 const introYes = document.createElement('button');
 const introNo = document.createElement('button');
 introYes.innerText = "Yes";
@@ -21,7 +21,8 @@ introNo.addEventListener('click', ()=> closeDialog());
 
 const introDialog = document.createElement('dialog');
 introDialog.innerText = "Music on?"
-introDialog.append(hrElement, introYes, introNo);
+buttonContainer.append(introYes, introNo);
+introDialog.append(buttonContainer);
 introDialog.classList.add('open')
 introDialog.showModalOriginal = introDialog.showModal;
 introDialog.showModal = () => {

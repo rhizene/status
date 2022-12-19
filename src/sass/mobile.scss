@@ -28,9 +28,11 @@
                 box-sizing: border-box;
             }
             dialog {
+                width: 25vw;
+                height: 10vh;
                 &.open {
                     &.show-modal {
-                        margin-left: 50vw;
+                        margin-left: 70vw;
                     }
                 }
             }
