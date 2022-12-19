@@ -80,7 +80,7 @@ dialog {
     margin-top:80vh;
     margin-left: 100vw;
     bottom: $dialogBottom;
-    width: 100vw;
+    width: 10vw;
     transition: margin-left 8s, opacity 5s;
     opacity: 0;
     &::backdrop {
