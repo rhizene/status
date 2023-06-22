@@ -42,13 +42,13 @@ html {
                         background-position: center center;
                         background-size: contain;
                         &.linkedin {
-                            background-image: url('./assets/linkedin.svg')
+                            background-image: url('../assets/linkedin.svg')
                         }
                         &.github {
-                            background-image: url('./assets/github.svg')
+                            background-image: url('../assets/github.svg')
                         }
                         &.newgrounds {
-                            background-image: url('./assets/newgrounds.svg')
+                            background-image: url('../assets/newgrounds.svg')
                         }
                         &:hover {
                             filter: none;

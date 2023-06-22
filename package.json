@@ -5,8 +5,10 @@
   "description": "A personal landing page",
   "private": true,
   "scripts": {
-    "start": "npm run crossenv && webpack serve --config webpack.config.js",
-    "build": "npm run crossenv && webpack --config webpack.config.prod.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "old-start": "npm run crossenv && webpack serve --config webpack.config.js",
+    "old-build": "npm run crossenv && webpack --config webpack.config.prod.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,10 +17,14 @@
   "author": "rhizene",
   "license": "GPL-3.0",
   "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
     "gh-pages": "^4.0.0",
     "postcss-loader": "^7.0.2",
+    "react-scripts": "^5.0.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "webpack": "^5.75.0",
@@ -36,5 +42,9 @@
       "last 5 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
