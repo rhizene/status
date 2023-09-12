@@ -1,6 +1,5 @@
 require.context('./assets', true)
 import "./app.scss"
-import scrollButton from "./js/scroll-button";
 import {mediaButton, audioElement} from "./js/media-button";
 import introDialog from "./js/intro-dialog";
 import React from "react";
@@ -25,19 +24,10 @@ class App extends React.Component{
     }
 
     render() {
-        // const aside = document.getElementsByTagName('aside')[0];
-        // const body = document.body;
-        // body.classList.add('scroll-lock');
-
-        // aside.appendChild(scrollButton);
         // body.appendChild(audioElement);
         // body.appendChild(mediaButton);
         // body.appendChild(introDialog);
         // introDialog.showModal();
-        // scrollButton.addEventListener('click', ()=>{
-        //     body.classList.remove('scroll-lock');
-        // });
-        // setInterval(() => this.renderTitle(), 200);
 
         return (<main>
             <Section title="About" description="A simple landing page converted to React." />

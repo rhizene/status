@@ -1,0 +1,10 @@
+@use '/src/sass/colors';
+
+#scrollButton {
+    color: colors.$color-subheader;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    right: 50%;
+}
