@@ -20,5 +20,6 @@ export default function Aside(props) {
                 </a>
             </li>
         </ul>
+        {props.children}
     </aside>)
 }
