@@ -1,8 +1,31 @@
 ## WebPack
 https://webpack.js.org/guides/getting-started
 
-## SASS with WebPack
+## SASS
+### with WebPack
 Add `sass-loader` package and provide sass entry file in webpack config
+### Component styles
+Add a <component>.module.scss and import in the component
+
+customDiv.module.scss:
+```scss
+.redText {
+  color: red;
+}
+```
+
+customDiv.js:
+```jsx
+import styles from './customDiv.module.scss'
+
+function CustomDiv(){
+  //...
+  return (
+    <div className={styles.redText}>this is red</div>
+  )
+}
+
+```
 
 
 ## Takeaways:

@@ -4,9 +4,7 @@
 html {
     @extend %no-padding;
     @extend %full-size;
-    body {
-        @extend %no-padding;
-        @extend %full-size;
+    #root {
         
         > aside{
             flex: 1;

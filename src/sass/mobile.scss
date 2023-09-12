@@ -2,7 +2,7 @@
 
 @media screen and (orientation: portrait) and (max-width:600px) {
     html {
-        body {
+        >#root {
             padding: 0;
             box-sizing: border-box;
             .mobile-only {

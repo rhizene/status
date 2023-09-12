@@ -1,0 +1,11 @@
+@use 'mixins';
+
+body > #root {
+    @extend %no-padding;
+    @extend %full-size;
+
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    
+}
