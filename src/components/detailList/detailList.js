@@ -7,8 +7,8 @@ import styles from './detailList.module.scss';
  * @returns {jsx}
  */
 export default function DetailList({listItems}) {
-    const details = Object.keys(listItems).map(summary=>
-        <li>
+    const details = Object.keys(listItems).map((summary, index)=>
+        <li key={index}>
             <details>
                 <summary>{summary}</summary>
                 {listItems[summary]}

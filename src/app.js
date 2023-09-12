@@ -3,9 +3,16 @@ import "./app.scss"
 import scrollButton from "./js/scroll-button";
 import {mediaButton, audioElement} from "./js/media-button";
 import introDialog from "./js/intro-dialog";
-import { createRoot } from 'react-dom/client';
 import React from "react";
 import Section from "./components/section/section";
+import DetailList from "./components/detailList/detailList";
+
+const skills = {
+    "javascript"               : <>I used <em>Angular</em> and <em>Typescript</em> in my past projects. Recently learning React</>,
+    "NodeJS"                   : <>As a build tool with <em>Webpack</em> or <em>Cordova</em>, or as a backend with frameworks like <em>ExpressJS</em>, I've used Node to create Web and Hybrid Mobile Apps</>,
+    "Stylesheets"              : <>can be pre-compiled with <em>SASS</em>, or guided with frameworks like <em>Bootstrap</em>.</>,
+    "Test Driven Development"  : <><em>Mocha JS</em> + <em>Chai</em>, <em>Sinon</em></>,
+}
 
 class App extends React.Component{
     constructor(props){
@@ -34,7 +41,9 @@ class App extends React.Component{
 
         return (<main>
             <Section title="About" description="A simple landing page converted to React." />
-            <Section title="Skills" description="Todo - list-section." />
+            <Section title="Skills" >
+                <DetailList listItems={skills}></DetailList>
+            </Section>
         </main>);
     }
 
