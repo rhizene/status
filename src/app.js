@@ -1,10 +1,12 @@
 require.context('./assets', true)
 import "./app.scss"
-import {mediaButton, audioElement} from "./js/media-button";
-import introDialog from "./js/intro-dialog";
 import React from "react";
 import Section from "./components/section/section";
 import DetailList from "./components/detailList/detailList";
+import MediaButton from "./components/mediaButton/mediaButton";
+import sound from './assets/545883_Shades-Of-James.mp3';
+import IntroDialog from "./components/introDialog/introDialog";
+
 
 const skills = {
     "javascript"               : <>I used <em>Angular</em> and <em>Typescript</em> in my past projects. Recently learning React</>,
@@ -24,16 +26,13 @@ class App extends React.Component{
     }
 
     render() {
-        // body.appendChild(audioElement);
-        // body.appendChild(mediaButton);
-        // body.appendChild(introDialog);
-        // introDialog.showModal();
-
         return (<main>
             <Section title="About" description="A simple landing page converted to React." />
             <Section title="Skills" >
                 <DetailList listItems={skills}></DetailList>
             </Section>
+            <MediaButton bgm={sound}></MediaButton>
+            <IntroDialog></IntroDialog>
         </main>);
     }
 

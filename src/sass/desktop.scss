@@ -9,12 +9,13 @@
                 min-width: 300px;
             }
 
-            dialog {
-                width: 10vw;
-                &.open {
-                    &.show-modal {
-                        margin-left: 85vw;
-                    }
+        }
+
+        dialog {
+            width: 10vw;
+            &.open {
+                &.show-modal {
+                    margin-left: 85vw;
                 }
             }
         }
