@@ -1,39 +1,14 @@
 require.context('./assets', true);
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './app.scss';
 import sound from './assets/545883_Shades-Of-James.mp3';
 import DetailList from './components/detailList/detailList';
 import IntroDialog from './components/introDialog/introDialog';
 import MediaButton from './components/mediaButton/mediaButton';
 import Section from './components/section/section';
+import { fetchSkills } from './services/skills.service';
 
 let state = {};
-const skills = {
-  javascript: (
-    <>
-      I used <em>Angular</em> and <em>Typescript</em> in my past projects.
-      Recently learning React
-    </>
-  ),
-  NodeJS: (
-    <>
-      As a build tool with <em>Webpack</em> or <em>Cordova</em>, or as a backend
-      with frameworks like <em>ExpressJS</em>, I've used Node to create Web and
-      Hybrid Mobile Apps
-    </>
-  ),
-  Stylesheets: (
-    <>
-      can be pre-compiled with <em>SASS</em>, or guided with frameworks like{' '}
-      <em>Bootstrap</em>.
-    </>
-  ),
-  'Test Driven Development': (
-    <>
-      <em>Mocha JS</em> + <em>Chai</em>, <em>Sinon</em>
-    </>
-  ),
-};
 
 function updateTitleState() {
   const { titleIndex, title, incrementor } = state;
@@ -65,12 +40,18 @@ function renderTitle() {
 }
 
 export default function App() {
+  let [skills, setSkills] = useState({});
+
   useEffect(() => {
     state = {
       title: 'N I C H O L ',
       titleIndex: 0,
       incrementor: 1,
     };
+
+    (async function fetchData() {
+      setSkills(await fetchSkills());
+    })();
 
     setInterval(() => renderTitle(), 200);
   }, []);
