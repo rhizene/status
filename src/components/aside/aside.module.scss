@@ -34,9 +34,6 @@ aside {
         &.github {
           background-image: url('/assets/github.svg');
         }
-        &.newgrounds {
-          background-image: url('/assets/newgrounds.svg');
-        }
         &:hover {
           filter: none;
           border-bottom-color: colors.$color-primary;
