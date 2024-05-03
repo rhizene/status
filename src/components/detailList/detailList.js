@@ -1,3 +1,4 @@
+import { Interweave } from 'interweave';
 import styles from './detailList.module.scss';
 /**
  * 
@@ -11,7 +12,7 @@ export default function DetailList({listItems}) {
         <li key={index}>
             <details>
                 <summary>{summary}</summary>
-                {listItems[summary]}
+                <Interweave content={listItems[summary]}></Interweave>
             </details>
 
         </li>
