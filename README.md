@@ -7,6 +7,9 @@ The project uses the following npm scripts
 ### npm start
 Launches the project in browser at localhost:3000 and watches for changes.
 
+### npm predeploy
+### npm deploy
+Publish changes to Github Pages.
 
 ## Credits
 - Color Palette by [coolors.co](https://coolors.co/afb927-1c1c1c-646f58-eff1ed-cdd3d5)
