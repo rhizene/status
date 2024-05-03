@@ -5,28 +5,33 @@ const api = {
 };
 const client = createClient(api.url, api.key);
 
+/**
+ * The actual service accessing the `client`.
+ *
+ * @callback ServiceCallback
+ * @this Service
+ */
 
 /**
  * 
- * @param {Function} serviceCall 
- * @param {*} defaultValue 
+ * @param {ServiceCallback} serviceCall
+ * @param {*} defaultValue
  * @returns Service.execute
  */
-export default function Service(serviceCall, defaultValue){
-    if(serviceCall === undefined) throw new Error("Service is undefined");
+export default function Service(serviceCall, defaultValue) {
+  if (serviceCall === undefined) throw new Error('Service is undefined');
 
-    this.isBusy = false
-    this.client = client;
+  this.isBusy = false;
+  this.client = client;
 
-    this.execute = () => {
-        if(this.isBusy) return Promise.resolve(defaultValue);
-        
-        this.isBusy = true;
-        return serviceCall.apply(this)
-            .finally(()=>{
-                this.isBusy = false;
-            });
-    }
+  this.execute = () => {
+    if (this.isBusy) return Promise.resolve(defaultValue);
 
-    return this.execute;
+    this.isBusy = true;
+    return serviceCall.apply(this).finally(() => {
+      this.isBusy = false;
+    });
+  };
+
+  return this.execute;
 }
