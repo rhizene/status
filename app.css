@@ -224,11 +224,14 @@ html #root > main {
     min-width: 100vw;
     min-height: 100vh;
     width: 100vw;
+  }
+  html #root > aside {
     height: 100vh;
   }
   html #root > main {
     padding: 0 1rem;
     box-sizing: border-box;
+    padding-bottom: 15vh;
   }
   html #root dialog {
     width: 25vw;

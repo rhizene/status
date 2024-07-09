@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/status/static/css/main.124c1201.css",
-    "main.js": "/status/static/js/main.e979e4d3.js",
+    "main.css": "/status/static/css/main.a09209b2.css",
+    "main.js": "/status/static/js/main.344946cd.js",
     "static/js/952.2a17d395.chunk.js": "/status/static/js/952.2a17d395.chunk.js",
     "static/media/545883_Shades-Of-James.mp3": "/status/static/media/545883_Shades-Of-James.2f20abd313b79eaaa2e7.mp3",
     "static/media/Very Simple Chalk.ttf": "/status/static/media/Very Simple Chalk.e53ee96f2458470a7c83.ttf",
@@ -11,12 +11,12 @@
     "static/media/deviantart.svg": "/status/static/media/deviantart.7a4eaa58f705aa460bc1.svg",
     "index.html": "/status/index.html",
     "static/media/github.svg": "/status/static/media/github.222092e1116cc03a6dd2.svg",
-    "main.124c1201.css.map": "/status/static/css/main.124c1201.css.map",
-    "main.e979e4d3.js.map": "/status/static/js/main.e979e4d3.js.map",
+    "main.a09209b2.css.map": "/status/static/css/main.a09209b2.css.map",
+    "main.344946cd.js.map": "/status/static/js/main.344946cd.js.map",
     "952.2a17d395.chunk.js.map": "/status/static/js/952.2a17d395.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.124c1201.css",
-    "static/js/main.e979e4d3.js"
+    "static/css/main.a09209b2.css",
+    "static/js/main.344946cd.js"
   ]
 }
