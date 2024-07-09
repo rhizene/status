@@ -1,10 +1,9 @@
 import React from "react";
 import Lightbox from "yet-another-react-lightbox";
 import { Captions } from "yet-another-react-lightbox/plugins";
-import styles from "./lightboxButton.module.scss";
 
 const captionOptions = {
-    descriptionAlighText: 'center'
+    descriptionTextAlign: "center"
 };
 
 export default function LightboxButton({images}){
