@@ -43,3 +43,8 @@ module.exports = {
   },
 };
 ```
+
+## TODO
+### npm run sass:static
+- replace paths to asset folder similar to `%PUBLIC_URL%` in [index.html](./public/index.html)
+- change to `npm run prebuild`

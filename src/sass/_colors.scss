@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 /*
 Palette from: https://coolors.co/afb927-1c1c1c-646f58-eff1ed-cdd3d5
 
@@ -21,3 +23,4 @@ $color-background: #050505;
 $color-header: #EFF1ED;
 $color-subheader: #CDD3D5;
 $color-text: #646F58;
+$color-header2:  color.scale($color-header, $lightness: -20%);

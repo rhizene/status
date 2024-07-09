@@ -1,5 +1,5 @@
-@use '/src/sass/colors';
-@use '/src/sass/mixins';
+@use '../../sass/colors';
+@use '../../sass/mixins';
 
 aside {
   &#name {
@@ -29,10 +29,10 @@ aside {
         background-position: center center;
         background-size: contain;
         &.linkedin {
-          background-image: url('../../assets/linkedin.svg');
+          background-image: url('../../../public/assets/linkedin.svg');
         }
         &.github {
-          background-image: url('/assets/github.svg');
+          background-image: url('../../../public/assets/github.svg');
         }
         &:hover {
           filter: none;

@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
+    "sass:static": "sass --no-source-map ./src/static.scss ./public/app.css",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

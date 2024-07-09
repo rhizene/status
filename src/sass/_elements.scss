@@ -1,6 +1,6 @@
 @use 'colors';
-
 @use 'root';
+@use 'mixins';
 
 $dialogBottom: 2rem;
 
@@ -101,6 +101,12 @@ dialog {
     }
 }
 
+ul {
+    &.list-none {
+        @extend %list-none;
+    }
+}
+
 #media-button {
     appearance: none;
     position: fixed;
@@ -130,4 +136,28 @@ dialog {
 
 .mobile-only {
     display: none;
+}
+
+em.text-button {
+    cursor: pointer;
+    display: inline-block;
+    color: colors.$color-header;
+    text-decoration: underline;
+    a {
+        color: colors.$color-header;
+        &:visited {
+            color: colors.$color-header2;
+        }
+    }
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    &:not(:first-child) {
+        padding-left: 0.5rem;
+    }
+    &:not(:last-child) {
+        padding-right: 0.5rem;
+    }
+    &::after {
+        content: ';';
+    }
 }
