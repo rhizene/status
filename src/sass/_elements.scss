@@ -18,6 +18,10 @@ $dialogBottom: 2rem;
 %bodyTextShadow {
     text-shadow: 2px 2px 2rem colors.$color-subheader;
 }
+%hideText {
+    color: rgba(colors.$color-text, 0);
+    text-shadow: none;
+}
 
 body {
     @extend %no-padding;
@@ -28,6 +32,23 @@ body {
     color: colors.$color-text;
     font-family: 'Roboto', sans-serif;
     @extend %bodyTextShadow;
+    * {
+        transition: background-color 4s ease-in-out, background-image 4s ease-out, color 2s ease-out, text-shadow 2s ease-out;
+    }
+
+    &.disappear {
+        background-image: none;
+        @extend %hideText;
+        *:not(dialog, dialog *) {
+            @extend %hideText;
+            h1, h2 {
+                @extend %hideText;
+            }
+            li i {
+                visibility: hidden;
+            }
+        }
+    }
 }
 
 h1 {
@@ -78,26 +99,47 @@ audio {
 
 
 dialog {
-    margin-top:80vh;
-    margin-left: 100vw;
-    bottom: $dialogBottom;
-    transition: margin-left 8s, opacity 5s;
     opacity: 0;
+    transition: opacity 2s ease-in, display 4s, overlay 4s;
+    transition-behavior: allow-discrete;
+    appearance: none;
+    border: none;
+    color: #FFF;
+    background-color: transparent;
+    text-align: center;
     > div {
         display: flex;
         padding-top: 0.5rem;
         width: 100%;
         justify-content: space-around;
+        div {
+            cursor: pointer;
+        }
     }
     &::backdrop {
-        transition: background-color 2s;
-        background: rgba(colors.$color-background, 0);
+        transition: opacity 4s ease-in, display 4s;
+        transition-behavior: allow-discrete;
+        background-color: colors.$color-background;
+        opacity: 0;
     }
-    &.open {
-        opacity: 1;
-        &::backdrop {
-            background: rgba(colors.$color-background, 1);
+    &[open] {
+        @starting-style {
+            opacity: 0;
         }
+        &::backdrop {
+            opacity: 1;
+        }
+        &.delayed-show {
+            opacity: 1;
+        }
+        &.fade-out::backdrop {
+            opacity: 0;
+        }
+    }
+}
+@starting-style {
+    dialog[open]::backdrop {
+      opacity: 1;
     }
 }
 
@@ -108,26 +150,31 @@ ul {
 }
 
 #media-button {
-    appearance: none;
     position: fixed;
     bottom: $dialogBottom;
     right: 2.5rem;
+    animation: glow-primary 4s 2s infinite;
+}
+
+.media-button {
+    appearance: none;
     width: 2rem;
     padding: 0.5rem;
     text-align: center;
     border-radius: 50%;
     transition: background-color 0.5s, border 2s;
     background-color:  rgba(100,100,100, 0.5);
-    border: 2px solid orange;
+    border: 2px solid colors.$color-primary;
+    color: colors.$color-primary;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     &:hover {
-        background-color:  rgba(255,255,255, 1);
+        background-color:  colors.$color-primary;
     }
     &.paused {
-        border-color: black;
+        color: colors.$color-background;
+        border-color: colors.$color-background;
     }
-
 }
 
 .scroll-lock {
@@ -136,6 +183,10 @@ ul {
 
 .mobile-only {
     display: none;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 em.text-button {
@@ -159,5 +210,19 @@ em.text-button {
     }
     &::after {
         content: ';';
+    }
+}
+
+@keyframes glow-primary {
+    0% {
+        box-shadow: 2px 2px 3rem colors.$color-primary;
+    }
+
+    50% {
+        box-shadow: 2px 2px 6rem colors.$color-primary;
+    }
+
+    100% {
+        box-shadow: 2px 2px 3rem colors.$color-primary;
     }
 }

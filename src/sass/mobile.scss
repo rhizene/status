@@ -17,9 +17,6 @@
             > aside {
                 height: 100vh;
             }
-            // > div.mobile-only {
-            //     height: 15vh;
-            // }
             > main {
                 padding: 0 1rem;
                 box-sizing: border-box;
@@ -28,11 +25,7 @@
             dialog {
                 width: 25vw;
                 height: 10vh;
-                &.open {
-                    &.show-modal {
-                        margin-left: 70vw;
-                    }
-                }
+                overflow: visible;
             }
         }
     }

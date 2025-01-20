@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const mediaButtonState = {
-  PAUSED: 'paused',
-  PLAY: '',
+export const mediaButtonState = {
+  PAUSED: 'media-button paused',
+  PLAY: 'media-button',
 };
 let buttonClass = mediaButtonState.PAUSED;
 let setButtonClass = () => {};
