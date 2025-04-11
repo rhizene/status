@@ -1,20 +1,26 @@
 @use 'colors';
+@use 'elements';
 
 @media screen and (orientation: portrait) and (max-width:600px) {
     html {
         #root {
             padding: 0;
             box-sizing: border-box;
+            
+            &.scroll-lock {
+                overflow-y: hidden;
+            }
+
             .mobile-only {
                 display: block;
             }
 
-            > aside, > main{
+            > header, > main{
                 min-width: 100vw;
                 min-height: 100vh;
                 width: 100vw;
             }
-            > aside {
+            > header {
                 height: 100vh;
             }
             > main {

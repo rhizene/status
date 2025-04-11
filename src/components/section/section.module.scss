@@ -1,0 +1,33 @@
+section {
+    width: 100%;
+    min-height: 100vh;
+    backdrop-filter: blur(1px);
+    box-sizing: border-box;
+    animation: flicker 2s infinite;
+}
+
+
+@keyframes flicker {
+    0%,2%,5%,7%,30%,35%,45%,65% { backdrop-filter: blur(2px); }
+    1%,6%,33%,60%,66%,100% {     backdrop-filter: blur(0); }
+}
+
+@media screen and (min-width:600px) {
+    section {
+        &:nth-child(odd) {
+            padding-right: 50%;
+            text-align: right;
+        }
+        &:nth-child(even) {
+            padding-left: 50%;
+        }
+    }
+
+}
+
+
+@media screen and (orientation: portrait) and (max-width:600px) { 
+    section {
+        width: 100%
+    }
+}

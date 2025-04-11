@@ -5,7 +5,7 @@ html {
   @extend %no-padding;
   @extend %full-size;
   #root {
-    > aside {
+    > header {
       flex: 1;
     }
     > main {

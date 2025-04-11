@@ -76,7 +76,7 @@ em {
 
 details {
     padding-left: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     summary {
         margin-left: -2rem;
         cursor: pointer;
@@ -175,10 +175,6 @@ ul {
         color: colors.$color-background;
         border-color: colors.$color-background;
     }
-}
-
-.scroll-lock {
-    overflow-y: hidden;
 }
 
 .mobile-only {

@@ -1,0 +1,28 @@
+
+#sectionTitle {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    text-align: center;
+    z-index: -1;
+    padding-top: 50vh;
+    h2 {
+        text-transform: capitalize;
+        font-size: 4rem;
+        margin-top: -2rem;
+        opacity: 0;
+
+        &.elementToFadeInAndOut {
+            opacity: 0.7;
+            animation: fade 2s infinite;
+        }
+    }
+}
+
+
+
+
+@keyframes fade {
+  0%,2%,5%,7%,30%,35%,45%,65% { opacity: 0 }
+  1%,6%,33%,60%,100% { opacity: 1 }
+}
