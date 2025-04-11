@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './aside.module.scss';
+import styles from './header.module.scss';
 import { fetchLinks } from '../../services/links.service';
 
 function listTemplate({ link, name, icon }, templateIndex) {
@@ -12,7 +12,7 @@ function listTemplate({ link, name, icon }, templateIndex) {
   );
 }
 
-export default function Aside(props) {
+export default function Header(props) {
   const [links, setLinks] = useState([]);
 
   useEffect(() => {
@@ -24,10 +24,10 @@ export default function Aside(props) {
   }, []);
 
   return (
-    <aside id={styles.name}>
+    <header id={styles.name}>
       <h1>Nichol Dimalanta</h1>
       <ul>{links}</ul>
       {props.children}
-    </aside>
+    </header>
   );
 }

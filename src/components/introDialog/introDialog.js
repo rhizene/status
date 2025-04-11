@@ -60,13 +60,13 @@ export default function IntroDialog() {
     <dialog ref={introDialogRef}>
       Music on?
       <div>
-        <div class={isBgmOn(state.isBgmSelected)} onClick={onClickYes}>
+        <div className={isBgmOn(state.isBgmSelected)} onClick={onClickYes}>
           <button className={mediaButtonState.PLAY}>
             ♫
           </button>
           <span>Yes</span>
         </div>
-        <div class={isBgmOff(state.isBgmSelected)} onClick={onClickNo}>
+        <div className={isBgmOff(state.isBgmSelected)} onClick={onClickNo}>
           <button className={mediaButtonState.PAUSED}>
             ♫  
           </button>

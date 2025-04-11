@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './app';
-import Aside from './components/aside/aside';
+import Header from './components/header/header';
 import ScrollButton from './components/scrollButton/scrollButton';
+import SectionTitle from './components/sectionTitle/sectionTitle';
+import { SectionTitleContext } from './components/sectionTitle/sectionTitleContext';
 
 const rootDom = document.getElementById('root');
 const root = createRoot(rootDom);
@@ -13,12 +15,21 @@ export function unlockRoot() {
 
 rootDom.classList.add(CLASS_SCROLL_LOCK);
 
+export function RootLayout (){
+  const [sectionTitle, setSectionTitle] = useState('');
 
-root.render(
-  <React.StrictMode>
-    <Aside>
-      <ScrollButton />
-    </Aside>
-    <App />
+
+  return (
+    <React.StrictMode>
+      <SectionTitleContext.Provider value = {[sectionTitle, setSectionTitle]}>
+      <SectionTitle />
+      <Header>
+        <ScrollButton />
+      </Header>
+      <App />
+      </SectionTitleContext.Provider>
   </React.StrictMode>
-);
+  );
+}
+
+root.render(<RootLayout />);
