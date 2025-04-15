@@ -3,8 +3,8 @@ import styles from './scrollButton.module.scss';
 
 export default function ScrollButton(){
     const handleClick = ()=>{
-        unlockRoot()
-        const firstSubheader = document.getElementsByTagName('h2')[0];
+        unlockRoot();
+        const firstSubheader = document.querySelector('section:first-child>h2');
         firstSubheader.scrollIntoView({
             block: 'start',
             inline: 'nearest',
