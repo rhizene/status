@@ -4,13 +4,14 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
 import './app.scss';
 import sound from './assets/545883_Shades-Of-James.mp3';
-import DetailList from './components/detailList/detailList';
 import IntroDialog from './components/introDialog/introDialog';
 import MediaButton from './components/mediaButton/mediaButton';
 import ProjectList from './components/projectList/projectList';
 import Section from './components/section/section';
+import SubtitleList from './components/subtitleList/subtitleList';
 import { getProjects } from './services/projects.service';
 import { fetchSkills } from './services/skills.service';
+import Subtitle from './components/subtitleList/subtitle';
 
 let state = {};
 
@@ -69,13 +70,14 @@ export default function App() {
         description="A simple landing page converted to React."
       />
       <Section title="Skills">
-        <DetailList listItems={skills}></DetailList>
+        <SubtitleList listItems={skills}></SubtitleList>
       </Section>
       <Section title="Projects" description="Past projects from clients and employers">
         <ProjectList listItems={projects}></ProjectList>
       </Section>
       <MediaButton bgm={sound}></MediaButton>
       <IntroDialog></IntroDialog>
+      <Subtitle />
     </main>
   );
 }

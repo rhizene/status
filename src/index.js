@@ -5,6 +5,7 @@ import Header from './components/header/header';
 import ScrollButton from './components/scrollButton/scrollButton';
 import SectionTitle from './components/sectionTitle/sectionTitle';
 import { SectionTitleProvider } from './components/sectionTitle/sectionTitleContext';
+import { SubtitleProvider } from './components/subtitleList/subtitleContext';
 
 const rootDom = document.getElementById('root');
 const root = createRoot(rootDom);
@@ -17,7 +18,9 @@ rootDom.classList.add(CLASS_SCROLL_LOCK);
 
 const Providers = ({children}) => (
   <SectionTitleProvider>
-    {children}
+    <SubtitleProvider>
+      {children}
+    </SubtitleProvider>
   </SectionTitleProvider>
 );
 

@@ -1,11 +1,7 @@
 import { Interweave } from 'interweave';
 import styles from './detailList.module.scss';
 /**
- * 
- * @param {{
- * listItems: {[key:string]:jsx}
- * }} params 
- * @returns {jsx}
+ * @depracated for SubtitleList
  */
 export default function DetailList({listItems}) {
     const details = Object.keys(listItems).map((summary, index)=>
