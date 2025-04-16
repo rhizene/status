@@ -1,5 +1,5 @@
 
-import styles from '../detailList/detailList.module.scss';
+import styles from './projectList.module.scss';
 import LightboxButton from '../lightboxButton/lightboxButton';
 
 /**
