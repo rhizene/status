@@ -1,5 +1,27 @@
 @use '../../sass/mixins';
+@use '../../sass/colors';
 
 .detailList {
     @extend %list-none;
+    li {
+        margin-bottom: 1rem;
+    }
+
+    details {
+        display: flex;
+        width: 40vw;
+        margin: auto;
+        flex-direction: column;
+        summary {
+            &::marker {
+                content: '';
+            }
+            &+div {
+                padding: 1rem;
+                transition: none;
+                background-color: rgba(colors.$color-background, 0.7);
+                backdrop-filter: blur(4px);
+            }
+        }
+    }
 }

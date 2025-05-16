@@ -6,6 +6,7 @@
 
     >div {
         border: 0.5rem solid transparent;
+        transition: none;
         &:hover {
             background-color: colors.$color-background;
             color: colors.$color-header;

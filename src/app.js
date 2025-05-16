@@ -72,7 +72,7 @@ export default function App() {
       <Section title="Skills">
         <SubtitleList listItems={skills}></SubtitleList>
       </Section>
-      <Section title="Projects" description="Past projects from clients and employers">
+      <Section title="Projects" description="Past projects from clients and employers" isWide={true}>
         <ProjectList listItems={projects}></ProjectList>
       </Section>
       <MediaButton bgm={sound}></MediaButton>

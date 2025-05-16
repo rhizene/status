@@ -11,17 +11,36 @@ export default function Subtitle() {
     useEffect(()=>{
         if(subtitle === '') return;
 
-        if(timeoutID !== null) {
-            clearTimeout(timeoutID);
-            timeoutID = null;
+        if(timeoutID !== null) {;
+            resetAutohide();
         }
         timeoutID = setTimeout(()=>{
-            setSubtitle('');
+            removeSubtitle();
         }, 5000);
     }, [subtitle]);
+
+    const resetAutohide = () => {
+        clearTimeout(timeoutID);
+        timeoutID = null
+    };
+
+    const removeSubtitle = (evt) => {
+        if(evt && evt.type !== 'click') {
+            evt.preventDefault();
+        };
+
+        setSubtitle('');
+    }
     return (
-        <div className={[styles.subtitle, subtitle ? styles.show : ''].join(' ')}>
-            <Interweave content={subtitle}></Interweave>
+        <div className={[styles.subtitle, subtitle ? styles.show : ''].join(' ')}
+            onMouseEnter={()=>resetAutohide()}
+            onMouseLeave={(e)=>removeSubtitle(e)}
+            >
+            {
+                typeof subtitle === 'string'
+                    ? <Interweave content={subtitle}></Interweave> 
+                    : subtitle
+            }
         </div>
     )
 }

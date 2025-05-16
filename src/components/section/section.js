@@ -25,7 +25,7 @@ export default function Section(props) {
         : null;
 
     return (
-        <section ref={sectionRef}>
+        <section ref={sectionRef} className={props.isWide ? styles['screen-wide'] : ''}>
             <h2>{props.title}</h2>
             {description}
             {props.children}

@@ -13,7 +13,7 @@ section {
 }
 
 @media screen and (min-width:600px) {
-    section {
+    section:not(.screen-wide) {
         &:nth-child(odd) {
             padding-right: 50%;
             text-align: right;
@@ -21,6 +21,9 @@ section {
         &:nth-child(even) {
             padding-left: 50%;
         }
+    }
+    section.screen-wide {
+        text-align: center;
     }
 
 }
